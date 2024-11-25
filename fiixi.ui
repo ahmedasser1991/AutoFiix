@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="Automating/icons.qrc">
+   <iconset resource="icons.qrc">
     <normaloff>:/newPrefix/images.png</normaloff>:/newPrefix/images.png</iconset>
   </property>
   <property name="styleSheet">
@@ -37,95 +37,135 @@
     <property name="bottomMargin">
      <number>4</number>
     </property>
-    <item row="0" column="0">
-     <widget class="QTabWidget" name="tabWidget">
-      <property name="focusPolicy">
-       <enum>Qt::NoFocus</enum>
+    <item row="2" column="0">
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
       </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(218, 211, 190);</string>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
       </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <widget class="QWidget" name="tab">
-       <attribute name="title">
-        <string>Work Orders</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_4">
-        <property name="leftMargin">
-         <number>0</number>
-        </property>
-        <property name="topMargin">
-         <number>9</number>
-        </property>
-        <item row="0" column="0">
-         <widget class="QFrame" name="MainFrame">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>354</height>
-           </size>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_6">
+      <layout class="QGridLayout" name="gridLayout_7">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QTabWidget" name="tabWidget">
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(218, 211, 190);</string>
+         </property>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="tab">
+          <attribute name="title">
+           <string>Work Orders</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_4">
            <property name="leftMargin">
             <number>0</number>
            </property>
            <property name="topMargin">
-            <number>0</number>
-           </property>
-           <property name="rightMargin">
-            <number>0</number>
-           </property>
-           <property name="bottomMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <item row="0" column="0">
-            <widget class="QFrame" name="frame">
+            <widget class="QFrame" name="MainFrame">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>354</height>
+              </size>
+             </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
              <property name="frameShadow">
               <enum>QFrame::Raised</enum>
              </property>
-             <layout class="QGridLayout" name="gridLayout">
+             <layout class="QGridLayout" name="gridLayout_6">
               <property name="leftMargin">
-               <number>1</number>
+               <number>0</number>
               </property>
               <property name="topMargin">
-               <number>1</number>
+               <number>0</number>
               </property>
               <property name="rightMargin">
-               <number>1</number>
+               <number>0</number>
               </property>
-              <item row="0" column="0" colspan="3">
-               <widget class="QGroupBox" name="invoiceInfoGB">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>181</height>
-                 </size>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QFrame" name="frame_2">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
                 </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>313</width>
-                  <height>192</height>
-                 </size>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
                 </property>
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QGroupBox{
+                <layout class="QGridLayout" name="gridLayout">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <item row="0" column="3" rowspan="3">
+                  <widget class="QGraphicsView" name="ImageView">
+                   <property name="minimumSize">
+                    <size>
+                     <width>600</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="focusPolicy">
+                    <enum>Qt::NoFocus</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0" colspan="3">
+                  <widget class="QGroupBox" name="invoiceInfoGB">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>181</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>313</width>
+                     <height>192</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QGroupBox{
 color:black;
 border-radius:7px;
 border:3px solid white;
@@ -152,215 +192,215 @@ QPushButton::pressed {
 background-color: #76ABAE;
 } 
 </string>
-                </property>
-                <property name="title">
-                 <string>Invoice Info</string>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_2">
-                 <property name="topMargin">
-                  <number>9</number>
-                 </property>
-                 <property name="horizontalSpacing">
-                  <number>6</number>
-                 </property>
-                 <property name="verticalSpacing">
-                  <number>1</number>
-                 </property>
-                 <item row="1" column="0">
-                  <widget class="QLineEdit" name="descriptionLE">
-                   <property name="minimumSize">
-                    <size>
-                     <width>239</width>
-                     <height>31</height>
-                    </size>
                    </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>265</width>
-                     <height>16777215</height>
-                    </size>
+                   <property name="title">
+                    <string>Invoice Info</string>
                    </property>
-                   <property name="styleSheet">
-                    <string notr="true"/>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="label">
-                   <property name="maximumSize">
-                    <size>
-                     <width>73</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>Description</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="0">
-                  <widget class="QFrame" name="frame_8">
-                   <property name="minimumSize">
-                    <size>
-                     <width>296</width>
-                     <height>70</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>71</height>
-                    </size>
-                   </property>
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_10">
-                    <property name="leftMargin">
-                     <number>0</number>
-                    </property>
+                   <layout class="QGridLayout" name="gridLayout_2">
                     <property name="topMargin">
                      <number>9</number>
                     </property>
-                    <item row="2" column="3">
-                     <widget class="QLineEdit" name="woLE">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>31</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>94</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="1">
-                     <widget class="QLabel" name="label_3">
-                      <property name="maximumSize">
-                       <size>
-                        <width>76</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                      <property name="text">
-                       <string>Total Amount</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="2" column="4">
-                     <widget class="QPushButton" name="addInvoiceInfoPB">
-                      <property name="minimumSize">
-                       <size>
-                        <width>98</width>
-                        <height>34</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>70</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>9</pointsize>
-                       </font>
-                      </property>
-                      <property name="text">
-                       <string>Add</string>
-                      </property>
-                      <property name="shortcut">
-                       <string>Return</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="2" column="1">
-                     <widget class="QLineEdit" name="amountLE">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>31</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>94</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="3">
-                     <widget class="QLabel" name="label_7">
-                      <property name="maximumSize">
-                       <size>
-                        <width>50</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                      <property name="text">
-                       <string>Wo#</string>
-                      </property>
-                     </widget>
-                    </item>
+                    <property name="horizontalSpacing">
+                     <number>6</number>
+                    </property>
+                    <property name="verticalSpacing">
+                     <number>1</number>
+                    </property>
                     <item row="1" column="0">
-                     <widget class="QLabel" name="label_2">
+                     <widget class="QLineEdit" name="descriptionLE">
+                      <property name="minimumSize">
+                       <size>
+                        <width>239</width>
+                        <height>31</height>
+                       </size>
+                      </property>
                       <property name="maximumSize">
                        <size>
-                        <width>50</width>
+                        <width>265</width>
                         <height>16777215</height>
                        </size>
                       </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label">
+                      <property name="maximumSize">
+                       <size>
+                        <width>73</width>
+                        <height>30</height>
+                       </size>
+                      </property>
                       <property name="text">
-                       <string>Qty</string>
+                       <string>Description</string>
                       </property>
                      </widget>
                     </item>
                     <item row="2" column="0">
-                     <widget class="QLineEdit" name="qtyLE">
+                     <widget class="QFrame" name="frame_8">
                       <property name="minimumSize">
                        <size>
-                        <width>0</width>
-                        <height>31</height>
+                        <width>296</width>
+                        <height>70</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>94</width>
-                        <height>16777215</height>
+                        <width>16777215</width>
+                        <height>71</height>
                        </size>
                       </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QGridLayout" name="gridLayout_10">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>9</number>
+                       </property>
+                       <item row="2" column="3">
+                        <widget class="QLineEdit" name="woLE">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>31</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>94</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="1">
+                        <widget class="QLabel" name="label_3">
+                         <property name="maximumSize">
+                          <size>
+                           <width>76</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>Total Amount</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="4">
+                        <widget class="QPushButton" name="addInvoiceInfoPB">
+                         <property name="minimumSize">
+                          <size>
+                           <width>98</width>
+                           <height>34</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>70</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <pointsize>9</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>Add</string>
+                         </property>
+                         <property name="shortcut">
+                          <string>Return</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="1">
+                        <widget class="QLineEdit" name="amountLE">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>31</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>94</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="3">
+                        <widget class="QLabel" name="label_7">
+                         <property name="maximumSize">
+                          <size>
+                           <width>50</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>Wo#</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="0">
+                        <widget class="QLabel" name="label_2">
+                         <property name="maximumSize">
+                          <size>
+                           <width>50</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>Qty</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="0">
+                        <widget class="QLineEdit" name="qtyLE">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>31</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>94</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
                      </widget>
                     </item>
                    </layout>
                   </widget>
                  </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="1" column="0" colspan="3">
-               <widget class="QFrame" name="frame_5">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>293</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>313</width>
-                  <height>466</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:3px solid white;
+                 <item row="1" column="0" colspan="3">
+                  <widget class="QFrame" name="frame_5">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>293</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>313</width>
+                     <height>466</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border:3px solid white;
 border-radius:7px;
 
 
@@ -390,51 +430,6 @@ QPushButton::hover {
 QPushButton::pressed { 
 background-color: #76ABAE;
 } </string>
-                </property>
-                <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_2">
-                 <item>
-                  <widget class="QFrame" name="frame_3">
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">
-QListWidget{
-background-color:white;
-border-radius:7px;
-border:3px solid white;
-
-}
-QLabel{
-color:black;
-border:0px;
-}
-QLineEdit{
-background-color:white;
-border-radius:7px;
-padding-left: 10px;
-}
-
-QPushButton { border: 0px solid transparent;
-border-radius: 10px;
-	background-color: #6B8A7A;
-} 
-QPushButton::hover {
-	background-color: #96d9dd;
-}
-QPushButton::pressed { 
-background-color: #76ABAE;
-} 
-QFrame{border:0px solid transparent};</string>
                    </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
@@ -442,189 +437,234 @@ QFrame{border:0px solid transparent};</string>
                    <property name="frameShadow">
                     <enum>QFrame::Raised</enum>
                    </property>
-                   <layout class="QVBoxLayout" name="verticalLayout">
-                    <property name="leftMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>0</number>
-                    </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_2">
                     <item>
-                     <widget class="QLabel" name="label_5">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>31</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <bold>true</bold>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">padding-top:20px;</string>
-                      </property>
-                      <property name="text">
-                       <string>Invoices List</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QListWidget" name="invoicesL">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>125</height>
-                       </size>
-                      </property>
-                      <property name="focusPolicy">
-                       <enum>Qt::NoFocus</enum>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item>
-                  <spacer name="horizontalSpacer_2">
-                   <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>40</width>
-                     <height>20</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                 <item>
-                  <widget class="QFrame" name="frame_4">
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">
-QListWidget{
-background-color:white;
-border-radius:7px;
-border:3px solid white;
-
-}
-QLabel{
-color:black;
-border:0px;
-}
-QLineEdit{
-background-color:white;
-border-radius:7px;
-padding-left: 10px;
-}
-
-QPushButton { border: 0px solid transparent;
-border-radius: 10px;
-	background-color: #6B8A7A;
-} 
-QPushButton::hover {
-	background-color: #96d9dd;
-}
-QPushButton::pressed { 
-background-color: #76ABAE;
-} 
-QFrame{border:0px solid transparent};</string>
-                   </property>
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_3">
-                    <property name="leftMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>0</number>
-                    </property>
-                    <item row="1" column="0" colspan="2">
-                     <widget class="QListWidget" name="filesL">
-                      <property name="focusPolicy">
-                       <enum>Qt::NoFocus</enum>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_6">
-                      <property name="font">
-                       <font>
-                        <pointsize>9</pointsize>
-                        <bold>true</bold>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">padding-top:20px;</string>
-                      </property>
-                      <property name="text">
-                       <string>Files List</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QPushButton" name="selectFolderPB">
-                      <property name="minimumSize">
-                       <size>
-                        <width>98</width>
-                        <height>34</height>
-                       </size>
-                      </property>
+                     <widget class="QFrame" name="frame_3">
                       <property name="maximumSize">
                        <size>
-                        <width>98</width>
-                        <height>35</height>
+                        <width>16777215</width>
+                        <height>16777215</height>
                        </size>
                       </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>9</pointsize>
-                       </font>
+                      <property name="styleSheet">
+                       <string notr="true">
+QListWidget{
+background-color:white;
+border-radius:7px;
+border:3px solid white;
+
+}
+QLabel{
+color:black;
+border:0px;
+}
+QLineEdit{
+background-color:white;
+border-radius:7px;
+padding-left: 10px;
+}
+
+QPushButton { border: 0px solid transparent;
+border-radius: 10px;
+	background-color: #6B8A7A;
+} 
+QPushButton::hover {
+	background-color: #96d9dd;
+}
+QPushButton::pressed { 
+background-color: #76ABAE;
+} 
+QFrame{border:0px solid transparent};</string>
                       </property>
-                      <property name="focusPolicy">
-                       <enum>Qt::NoFocus</enum>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
                       </property>
-                      <property name="toolTip">
-                       <string>choose the folder contains the invoices files</string>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
                       </property>
-                      <property name="text">
-                       <string extracomment="choose the folder contains the invoices files">Select Folder</string>
+                      <layout class="QVBoxLayout" name="verticalLayout">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_5">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>31</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">padding-top:20px;</string>
+                         </property>
+                         <property name="text">
+                          <string>Invoices List</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QListWidget" name="invoicesL">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>125</height>
+                          </size>
+                         </property>
+                         <property name="focusPolicy">
+                          <enum>Qt::NoFocus</enum>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="horizontalSpacer_2">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
                       </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item>
+                     <widget class="QFrame" name="frame_4">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">
+QListWidget{
+background-color:white;
+border-radius:7px;
+border:3px solid white;
+
+}
+QLabel{
+color:black;
+border:0px;
+}
+QLineEdit{
+background-color:white;
+border-radius:7px;
+padding-left: 10px;
+}
+
+QPushButton { border: 0px solid transparent;
+border-radius: 10px;
+	background-color: #6B8A7A;
+} 
+QPushButton::hover {
+	background-color: #96d9dd;
+}
+QPushButton::pressed { 
+background-color: #76ABAE;
+} 
+QFrame{border:0px solid transparent};</string>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QGridLayout" name="gridLayout_3">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <item row="1" column="0" colspan="2">
+                        <widget class="QListWidget" name="filesL">
+                         <property name="focusPolicy">
+                          <enum>Qt::NoFocus</enum>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="1">
+                        <widget class="QPushButton" name="selectFolderPB">
+                         <property name="minimumSize">
+                          <size>
+                           <width>98</width>
+                           <height>34</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>98</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <pointsize>9</pointsize>
+                          </font>
+                         </property>
+                         <property name="focusPolicy">
+                          <enum>Qt::NoFocus</enum>
+                         </property>
+                         <property name="toolTip">
+                          <string>choose the folder contains the invoices files</string>
+                         </property>
+                         <property name="text">
+                          <string extracomment="choose the folder contains the invoices files">Select Folder</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="0">
+                        <widget class="QLabel" name="label_6">
+                         <property name="font">
+                          <font>
+                           <pointsize>9</pointsize>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">padding-top:20px;</string>
+                         </property>
+                         <property name="text">
+                          <string>Files List</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
                      </widget>
                     </item>
                    </layout>
                   </widget>
                  </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="2" column="0" colspan="3">
-               <widget class="QFrame" name="frame_7">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>153</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>313</width>
-                  <height>148</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QFrame{
+                 <item row="2" column="0" colspan="3">
+                  <widget class="QFrame" name="frame_7">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>153</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>313</width>
+                     <height>148</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QFrame{
 border:3px solid white;
 border-radius:7px;
 }
@@ -650,121 +690,124 @@ QPushButton::pressed {
 background-color: #76ABAE;
 } 
 </string>
-                </property>
-                <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_9">
-                 <property name="bottomMargin">
-                  <number>5</number>
-                 </property>
-                 <item row="1" column="1">
-                  <spacer name="horizontalSpacer_4">
-                   <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
                    </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>505</width>
-                     <height>20</height>
-                    </size>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
                    </property>
-                  </spacer>
-                 </item>
-                 <item row="1" column="2">
-                  <widget class="QPushButton" name="startPB">
-                   <property name="minimumSize">
-                    <size>
-                     <width>98</width>
-                     <height>34</height>
-                    </size>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
                    </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                    </font>
-                   </property>
-                   <property name="focusPolicy">
-                    <enum>Qt::NoFocus</enum>
-                   </property>
-                   <property name="text">
-                    <string>Start</string>
-                   </property>
-                   <property name="shortcut">
-                    <string>Ctrl+S</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="2">
-                  <spacer name="verticalSpacer_3">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                 <item row="0" column="0" rowspan="2">
-                  <widget class="QGroupBox" name="groupBox_3">
-                   <property name="minimumSize">
-                    <size>
-                     <width>110</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>130</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                   <property name="title">
-                    <string>Internet speed</string>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_11">
-                    <item row="0" column="0">
-                     <widget class="QRadioButton" name="fastRB">
+                   <layout class="QGridLayout" name="gridLayout_9">
+                    <property name="bottomMargin">
+                     <number>5</number>
+                    </property>
+                    <item row="1" column="1">
+                     <spacer name="horizontalSpacer_4">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>505</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item row="1" column="2">
+                     <widget class="QPushButton" name="startPB">
+                      <property name="minimumSize">
+                       <size>
+                        <width>98</width>
+                        <height>34</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>9</pointsize>
+                       </font>
+                      </property>
                       <property name="focusPolicy">
                        <enum>Qt::NoFocus</enum>
                       </property>
                       <property name="text">
-                       <string>Fast</string>
+                       <string>Start</string>
+                      </property>
+                      <property name="shortcut">
+                       <string>Ctrl+S</string>
                       </property>
                      </widget>
                     </item>
-                    <item row="1" column="0">
-                     <widget class="QRadioButton" name="mediumRB">
-                      <property name="focusPolicy">
-                       <enum>Qt::NoFocus</enum>
+                    <item row="0" column="2">
+                     <spacer name="verticalSpacer_3">
+                      <property name="orientation">
+                       <enum>Qt::Vertical</enum>
                       </property>
-                      <property name="text">
-                       <string>Medium</string>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>40</height>
+                       </size>
                       </property>
-                      <property name="checked">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
+                     </spacer>
                     </item>
-                    <item row="2" column="0">
-                     <widget class="QRadioButton" name="slowRB">
-                      <property name="focusPolicy">
-                       <enum>Qt::NoFocus</enum>
+                    <item row="0" column="0" rowspan="2">
+                     <widget class="QGroupBox" name="groupBox_3">
+                      <property name="minimumSize">
+                       <size>
+                        <width>110</width>
+                        <height>0</height>
+                       </size>
                       </property>
-                      <property name="text">
-                       <string>Slow</string>
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>130</height>
+                       </size>
                       </property>
+                      <property name="font">
+                       <font>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="title">
+                       <string>Internet speed</string>
+                      </property>
+                      <layout class="QGridLayout" name="gridLayout_11">
+                       <item row="0" column="0">
+                        <widget class="QRadioButton" name="fastRB">
+                         <property name="focusPolicy">
+                          <enum>Qt::NoFocus</enum>
+                         </property>
+                         <property name="text">
+                          <string>Fast</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="0">
+                        <widget class="QRadioButton" name="mediumRB">
+                         <property name="focusPolicy">
+                          <enum>Qt::NoFocus</enum>
+                         </property>
+                         <property name="text">
+                          <string>Medium</string>
+                         </property>
+                         <property name="checked">
+                          <bool>true</bool>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="0">
+                        <widget class="QRadioButton" name="slowRB">
+                         <property name="focusPolicy">
+                          <enum>Qt::NoFocus</enum>
+                         </property>
+                         <property name="text">
+                          <string>Slow</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
                      </widget>
                     </item>
                    </layout>
@@ -773,56 +816,92 @@ background-color: #76ABAE;
                 </layout>
                </widget>
               </item>
-              <item row="0" column="3" rowspan="3">
-               <widget class="QGraphicsView" name="ImageView">
-                <property name="minimumSize">
-                 <size>
-                  <width>600</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>16777215</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
-                </property>
-               </widget>
-              </item>
              </layout>
             </widget>
            </item>
           </layout>
          </widget>
-        </item>
-       </layout>
-      </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QFrame" name="frame_6">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>43</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{background-color: rgb(218, 211, 190);}
+
+QPushButton { border: 0px solid transparent;
+border-radius: 10px;
+	background-color: #6B8A7A;
+} 
+QPushButton::hover {
+	background-color: #96d9dd;
+}
+QPushButton::pressed { 
+background-color: #76ABAE;
+} 
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>834</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="minimumSize">
+          <size>
+           <width>111</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>107</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Check For Update</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
    </layout>
   </widget>
  </widget>
- <tabstops>
-  <tabstop>descriptionLE</tabstop>
-  <tabstop>qtyLE</tabstop>
-  <tabstop>amountLE</tabstop>
-  <tabstop>woLE</tabstop>
-  <tabstop>addInvoiceInfoPB</tabstop>
-  <tabstop>ImageView</tabstop>
-  <tabstop>startPB</tabstop>
-  <tabstop>selectFolderPB</tabstop>
-  <tabstop>fastRB</tabstop>
-  <tabstop>tabWidget</tabstop>
-  <tabstop>mediumRB</tabstop>
-  <tabstop>slowRB</tabstop>
-  <tabstop>invoicesL</tabstop>
-  <tabstop>filesL</tabstop>
- </tabstops>
  <resources>
-  <include location="Automating/icons.qrc"/>
+  <include location="icons.qrc"/>
  </resources>
  <connections/>
 </ui>
