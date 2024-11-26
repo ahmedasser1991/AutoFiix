@@ -19,7 +19,8 @@ import PyQt5.QtWidgets
 from PyQt5.uic import * # type: ignore
 from os import path
 import sys
-
+import requests
+import zipfile
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service as ChromeService
@@ -31,6 +32,7 @@ import time
 import os as os
 import shutil
 from pynput.keyboard import Key,Controller
+
 # from fiixi import Ui_MainWindow
 uiApp,_=loadUiType(path.join(path.dirname(__file__),"fiixi.ui")) # type: ignore
 class Application(QMainWindow,uiApp):
@@ -41,6 +43,20 @@ class Application(QMainWindow,uiApp):
          self.workOrderTabButtonsClicks()
          self.setWindowTitle("Auto FIIX")         
          self.lastItem=False
+         self.updateAppPB.clicked.connect(self.updateApp)
+         QProgressBar.setVisible(self.downloadProgressBar,False)
+         
+   
+   def updateApp(self):
+      
+      currentVersion="v0.0.0"
+      updateUrl="https://api.github.com/repos/ahmedasser1991/AutoFiix/releases/latest"
+      downloadPath="./updates"
+      updater=Updater(self,currentVersion,updateUrl,downloadPath)
+      downloadLink=updater.checkForUpdat()
+      if downloadLink:
+         updater.downloadUpdate(downloadLink)
+      print(downloadLink)
          
    def SelectFolder(self):
       self.folderPath=QFileDialog.getExistingDirectory(self,"Choose Folder")      
@@ -337,10 +353,106 @@ def main():
     
 
 class Updater():
-   def __init__(self):
-      pass
-      
+   def __init__(self,parent,currentVersion,updateUrl,downloadPath):
+      self.currentVersion=currentVersion
+      self.updateUrl=updateUrl
+      self.downloadPath=downloadPath
+      self.parent=parent
+      self.token="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"
+      self.headers = {
+    "Authorization": f"Bearer {self.token}",  # Your token authenticates you
+    "Accept": "application/vnd.github.v3+json"  # Requests GitHub API v3 responses in JSON format
+}
+   def __checkVersion(self,latestVersion,currentVersion):
+      latestVersion=latestVersion.lstrip("v").split(".")  
+      currentVersion=currentVersion.lstrip("v").split(".") 
+      latestVersion=[int(num) for num in latestVersion]
+      currentVersion=[int(num) for num in currentVersion]
+      return latestVersion>currentVersion
+   
+   def __showUpdateMessage(self,latestVersion):
+         message=QMessageBox(self.parent)
+         message.setWindowTitle("Update Status")
+         message.setText(f"Update Available Version {latestVersion}\n Would You Like to Download and Update?")
+         updateButton=message.addButton("Download & Update",QMessageBox.YesRole)
+         cancelButton=message.addButton("Cancel",QMessageBox.RejectRole)
+         message.setIcon(QMessageBox.Information)   
+         message.exec_()        
+         buttonClicked=message.clickedButton()
+         if buttonClicked==updateButton:
+            return True
+         return False
 
+   
+   def __getDownloadLink(self,data):
+      for asset in data:
+         if asset["name"].endswith(".exe")or asset["name"].endswith(".zip"):
+            
+            return asset["browser_download_url"]
+   def checkForUpdat(self):
+     try: 
+         response=requests.get(self.updateUrl,headers=self.headers)   
+         response.raise_for_status()
+         data=response.json()
+         latestVersion=data['tag_name']
+         isNewVersion=self.__checkVersion(latestVersion,self.currentVersion)
+         
+         if isNewVersion:
+            updateAction=self.__showUpdateMessage(latestVersion)
+            if updateAction:
+               return self.__getDownloadLink(data["assets"])
+            else:
+               return None
+         else:
+            QMessageBox.information(self.parent,"Update status","No Update Available")   
+            return None   
+     except Exception as e:
+        QMessageBox.warning(self.parent,"Error",f"Error checking for update :{e}")
+   
+   def updateCompleted(self,success):
+      self.updateAppPB.setEnabled(True)
+      if success:
+         QMessageBox.information(self.parent,"Update Completed","Update Completed Successfully")
+      else:
+         QMessageBox.information(self.parent,"Update Not Completed","Update Failed")
+
+   def downloadUpdate(self,downloadUrl):
+      self.parent.updateAppPB.setEnabled(False)
+      self.thread=DownloadThread(downloadUrl,self.downloadPath,self.headers)
+      self.parent.downloadProgressBar.setVisible(True)
+      self.thread.progressSubmitted.connect(self.parent.downloadProgressBar.setValue)
+      self.thread.downloadCompleted.connect(self.updateCompleted)
+      self.thread.startDownloading()
+
+
+class DownloadThread(QThread):
+   progressSubmitted=pyqtSignal(int)
+   downloadCompleted=pyqtSignal(bool)
+   def __init__(self,downloadUrl,downloadPath,headers):
+      super().__init__()
+      self.headers=headers
+      self.downloadUrl=downloadUrl
+      self.downloadPath=downloadPath
+   def startDownloading(self):
+ 
+      # try:   
+         response=requests.get(self.downloadUrl,stream=True,headers=self.headers)
+         response.raise_for_status()
+         zipFile=os.path.join(self.downloadPath,"update.zip")
+         totalSize=int(response.headers.get("content-length",0))
+         downloadSize=0
+         with open(zipfile,"wb")as file:
+            for chunk in response.iter_content(chunk_size=4096) :
+               if chunk:
+                  file.write(chunk)
+                  downloadSize+=len(chunk)
+                  progress=int((downloadSize/totalSize)*100)
+                  self.progressSubmitted.emit(progress)
+                  
+                  
+            self.downloadCompleted.emit(True)   
+      # except Exception as e:
+      #    print(e)     
 if __name__=="__main__":
     main()
              

@@ -876,7 +876,26 @@ background-color: #76ABAE;
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QProgressBar" name="downloadProgressBar">
+         <property name="minimumSize">
+          <size>
+           <width>273</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="value">
+          <number>0</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="updateAppPB">
          <property name="minimumSize">
           <size>
            <width>111</width>

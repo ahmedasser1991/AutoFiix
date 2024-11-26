@@ -1,0 +1,2 @@
+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
+ curl -I -H "Authorization: Bearer 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" https://github.com/ahmedasser1991/AutoFiix/releases/download/v1.0.1/tonyCash.exe 
